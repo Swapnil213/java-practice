@@ -75,6 +75,13 @@ public class Solutions {
         return output.toString();
     }
 
+    public static long factorial(long n) {
+        if (n == 1)
+            return 1;
+        else
+            return (n * factorial(n - 1));
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter String to check palindrome");
@@ -110,6 +117,8 @@ public class Solutions {
         System.out.println();
 
         System.out.println(removeWhiteSpaces("I am a Student"));
+
+        System.out.println(factorial(10));
 
         sc.close();
     }
