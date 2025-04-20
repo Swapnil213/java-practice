@@ -44,3 +44,37 @@ Operator	Description
 BETWEEN	Between a certain range	
 LIKE	Search for a pattern	
 IN	To specify multiple possible values for a column
+
+//The ORDER BY keyword is used to sort the result-set in ascending or descending order.
+SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1, column2, ... ASC|DESC;
+
+//Example
+//Sort the products by price:
+SELECT * FROM Products
+ORDER BY Price;
+
+
+//Sort the products from highest to lowest price:
+SELECT * FROM Products
+ORDER BY Price DESC;
+
+//Sort the products alphabetically by ProductName:
+SELECT * FROM Products
+ORDER BY ProductName;
+
+//Sort the products by ProductName in reverse order:
+SELECT * FROM Products
+ORDER BY ProductName DESC;
+
+//The following SQL statement selects all customers from the "Customers" table,
+//sorted by the "Country" and the "CustomerName" column. This means that it orders by Country,
+//but if some rows have the same Country, it orders them by CustomerName:
+SELECT * FROM Customers
+ORDER BY Country, CustomerName;
+
+//The following SQL statement selects all customers from the "Customers" table,
+//sorted ascending by the "Country" and descending by the "CustomerName" column:
+SELECT * FROM Customers
+ORDER BY Country ASC, CustomerName DESC;
