@@ -78,3 +78,92 @@ ORDER BY Country, CustomerName;
 //sorted ascending by the "Country" and descending by the "CustomerName" column:
 SELECT * FROM Customers
 ORDER BY Country ASC, CustomerName DESC;
+
+//Select all customers from Spain that starts with the letter 'G':
+SELECT *
+FROM Customers
+WHERE Country = 'Spain' AND CustomerName LIKE 'G%';
+
+//The following SQL statement selects all fields from Customers 
+//where Country is "Brazil" AND City is "Rio de Janeiro" 
+//AND CustomerID is higher than 50:
+Example
+SELECT * FROM Customers
+WHERE Country = 'Brazil'
+AND City = 'Rio de Janeiro'
+AND CustomerID > 50;
+
+//Select all Spanish customers that starts with either "G" or "R":
+SELECT * FROM Customers
+WHERE Country = 'Spain' AND (CustomerName LIKE 'G%' OR CustomerName LIKE 'R%');
+
+//Select only the customers that are NOT from Spain:
+SELECT * FROM Customers
+WHERE NOT Country = 'Spain';
+
+//Select customers that does not start with the letter 'A':
+SELECT * FROM Customers
+WHERE CustomerName NOT LIKE 'A%';
+
+//Select customers with a customerID not between 10 and 60:
+SELECT * FROM Customers
+WHERE CustomerID NOT BETWEEN 10 AND 60;
+
+//Select customers that are not from Paris or London:
+SELECT * FROM Customers
+WHERE City NOT IN ('Paris', 'London');
+
+//Select customers with a CustomerId not greater than 50:
+SELECT * FROM Customers
+WHERE NOT CustomerID > 50;
+
+Note: There is a not-greater-than operator: !> that would give you the same result.
+
+
+//The following SQL statement inserts a new record in the "Customers" table:
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+
+//It is also possible to only insert data in specific columns.
+INSERT INTO Customers (CustomerName, City, Country)
+VALUES ('Cardinal', 'Stavanger', 'Norway');
+
+//To insert multiple rows of data, we use the same INSERT INTO statement, but with multiple values:
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES
+('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway'),
+('Greasy Burger', 'Per Olsen', 'Gateveien 15', 'Sandnes', '4306', 'Norway'),
+('Tasty Tee', 'Finn Egan', 'Streetroad 19B', 'Liverpool', 'L1 0AA', 'UK');
+
+//The following SQL lists all customers with a NULL value in the "Address" field:
+SELECT CustomerName, ContactName, Address
+FROM Customers
+WHERE Address IS NULL;
+
+//The following SQL lists all customers with a value in the "Address" field:
+SELECT CustomerName, ContactName, Address
+FROM Customers
+WHERE Address IS NOT NULL;
+
+//The following SQL statement will update the ContactName to "Juan" for all records
+//where country is "Mexico":
+UPDATE Customers
+SET ContactName='Juan'
+WHERE Country='Mexico';
+
+//Be careful when updating records. If you omit the WHERE clause, ALL records will be updated!
+UPDATE Customers
+SET ContactName='Juan';
+
+//The DELETE statement is used to delete existing records in a table.
+DELETE FROM table_name WHERE condition;
+
+//The following SQL statement deletes the customer "Alfreds Futterkiste" from the "Customers" table:
+DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
+
+//The following SQL statement deletes all rows in the "Customers" table, without deleting the table:
+DELETE FROM Customers;
+
+//To delete the table completely, use the DROP TABLE statement:
+//Remove the Customers table:
+DROP TABLE Customers;
