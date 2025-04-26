@@ -1,6 +1,3 @@
-// Java Program to print pattern
-// Zero-One triangle
-import java.util.*;
 public class ZeroOne {
 
     // Function to demonstrate pattern

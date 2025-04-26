@@ -1,7 +1,3 @@
-// Java Program to print pattern
-// Number triangle pattern
-import java.util.*;
-
 public class NumberTri {
     
     // Function to demonstrate pattern

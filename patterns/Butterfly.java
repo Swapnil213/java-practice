@@ -1,6 +1,3 @@
-// Java Program to print Butterfly Pattern
-import java.util.*;
-
 public class Butterfly {
 
     // Function to demonstrate the pattern

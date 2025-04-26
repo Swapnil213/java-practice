@@ -1,7 +1,3 @@
-// Java Program to print pattern
-// Hollow Hourglass Pattern
-import java.util.*;
-
 public class Hourglass {
 
     // Function to demonstrate pattern

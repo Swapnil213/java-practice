@@ -1,7 +1,3 @@
-// Java Program to print Pattern
-// Hollow Diamond Star
-import java.util.*;
-
 public class HollowDiamond {
 
     // Function to demonstrate pattern

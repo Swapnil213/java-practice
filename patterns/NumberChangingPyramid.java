@@ -1,21 +1,22 @@
-public class Rhombus {
+// Java code for printing pattern
+public class NumberChangingPyramid {
 
     // Function to demonstrate pattern
     public static void printPattern(int n) {
         int i, j;
-        // int num = 1;
+        int num = 1;
 
         // outer loop to handle number of rows
         for (i = 1; i <= n; i++) {
 
-            // inner loop to print spaces
-            for (j = 1; j <= n - i; j++) {
-                System.out.print(" ");
-            }
+            // inner loop to handle number of columns
+            for (j = 1; j <= i; j++) {
 
-            // inner loop to print stars
-            for (j = 1; j <= n; j++) {
-                System.out.print("*");
+                // printing value of num in each iteration
+                System.out.print(num + " ");
+
+                // increasing the value of num
+                num++;
             }
 
             // printing new line for each row
